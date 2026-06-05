@@ -141,7 +141,21 @@ peaks = (attractor_strength == neighborhood)
 threshold = np.mean(attractor_strength) * 1.5
 peaks = peaks & (attractor_strength > threshold)
 
+plt.imshow(influence_field, cmap='hot')
+plt.title("Influence Field")
+plt.colorbar()
+plt.show()
+
+
 entities = np.array(np.where(peaks)).T
+
+influence_field = np.zeros_like(attractor_strength)
+
+for ex, ey in entities:
+    for i in range(size):
+        for j in range(size):
+            dist = np.sqrt((i - ex)**2 + (j - ey)**2)
+            influence_field[i, j] += np.exp(-dist / 5.0)
 
 labeled, num_entities = label(peaks)
 
