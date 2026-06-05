@@ -40,10 +40,10 @@ for i, r in enumerate(r_values):
     trajectory = np.array(trajectory)
 
     # 活动度（平均位移）
-        diffs = np.diff(trajectory, axis=0)
-        activity = np.mean(np.linalg.norm(diffs, axis=1))
+    diffs = np.diff(trajectory, axis=0)
+    activity = np.mean(np.linalg.norm(diffs, axis=1))
 
-        print(f"r={r:.2f}, activity={activity:.3f}")
+    print(f"r={r:.2f}, activity={activity:.3f}")
 
 
     # -------------------------
