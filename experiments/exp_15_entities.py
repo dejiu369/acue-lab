@@ -141,7 +141,12 @@ peaks = (attractor_strength == neighborhood)
 threshold = np.mean(attractor_strength) * 1.5
 peaks = peaks & (attractor_strength > threshold)
 
+entities = np.array(np.where(peaks)).T
+
 labeled, num_entities = label(peaks)
 
 print("Detected entities:", num_entities)
+
+
+
 
