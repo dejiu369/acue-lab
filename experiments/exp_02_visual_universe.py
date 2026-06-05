@@ -13,13 +13,14 @@ X, Y = np.meshgrid(x, y)
 Z = np.vectorize(V)(X, Y)
 
 plt.figure(figsize=(6, 6))
-plt.contourf(X, Y, Z, levels=1, colors=["white", "black"])
+
+# ⭐ 语义修正：存在 = 白色
+plt.contourf(X, Y, Z, levels=1, colors=["black", "white"])
 
 plt.title("ACUE v0.2 — Admissibility Space")
 plt.xlabel("x")
 plt.ylabel("y")
 
-# ⭐关键修改：保存图片，而不是 show
 plt.savefig("acue_v0_2.png", dpi=200)
 
 print("Visualization saved: acue_v0_2.png")
