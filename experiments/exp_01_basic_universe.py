@@ -1,4 +1,8 @@
 # experiments/exp_01_basic_universe.py
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from acue.core import System
 from acue.constraints import bound_constraint
